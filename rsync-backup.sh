@@ -16,13 +16,15 @@ for hostname in "$@"; do
     # aspen, brighton, heavenly, mammoth, parkcity, revelstoke,
     # steamboat, sugarbush, tamarack, taos, whitewater
     case ${hostname} in
-        "aspen" | "brighton" | "heavenly" | "mammoth" | "parkcity" | \
-            "steamboat" | "sugarbush" | "tamarack" | "taos" | "whitewater")
+        "aspen" | "brighton" | "mammoth" | "parkcity" | "taos")
             FROM_DIRS="/boot /etc /home /root /usr/local /var"
             ;;
         "revelstoke")
             FROM_DIRS="/boot /etc /home /root /usr/local \
             /usr/ports/distfiles/local-patches /var"
+            ;;
+        "heavenly" | "steamboat" |  "sugarbush" | "tamarack" | "whitewater")
+            FROM_DIRS="/boot /etc /root /usr/home /usr/local /var"
             ;;
         *)
             echo "${CMDNAME}: Unknown hostname."
