@@ -44,7 +44,7 @@ for hostname in "$@"; do
 
     BACKUP_TO_DIR=/mnt/backup/${chostname}
 
-    echo "${CMDNAME}: Backing up ${chostname} directories..."
+    echo "${CMDNAME}: Backing up ${chostname} started at $(date)."
     mkdir -p ${BACKUP_TO_DIR}
     rsync -vazR \
           --delete \
@@ -56,7 +56,7 @@ for hostname in "$@"; do
           --exclude='/var/poudriere' \
           --exclude='/var/tmp' \
           ${hostname}${BACKUP_FROM_DIRS} ${BACKUP_TO_DIR}
-    echo "${CMDNAME}: Backing up ${chostname} finished."
+    echo "${CMDNAME}: Backing up ${chostname} finished at $(date)."
     echo
     echo
     echo
