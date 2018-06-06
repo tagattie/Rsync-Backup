@@ -37,6 +37,7 @@ for hostname in "$@"; do
     rest=$(echo ${hostname} | cut -c 2-)
     chostname=${cap}${rest}
 
+    BACKUP_FROM_DIRS=""
     for dir in ${FROM_DIRS}; do
         BACKUP_FROM_DIRS="${BACKUP_FROM_DIRS} :${dir}"
     done
