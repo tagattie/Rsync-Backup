@@ -58,6 +58,7 @@ for hostname in "$@"; do
           --exclude='/usr/local/www/packages' \
           --exclude='/var/poudriere' \
           --exclude='/var/tmp' \
+          --exclude='/var/vm' \
           ${hostname}${BACKUP_FROM_DIRS} ${BACKUP_TO_DIR}
     echo "${CMDNAME}: Backing up ${chostname} finished at $(date)."
     echo
