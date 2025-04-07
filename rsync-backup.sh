@@ -13,19 +13,16 @@ fi
 
 for hostname in "$@"; do
     # List of available hosts:
-    # aspen, brighton, heavenly, mammoth, parkcity, revelstoke,
-    # squawvalley, steamboat, sugarbush, tamarack, taos, whitewater,
-    # wolfcreek
+    # aspen, mammoth, parkcity, revelstoke, steamboat, taos, whitewater, wolfcreek
     case ${hostname} in
-        "aspen" | "brighton" | "mammoth" | "parkcity" | "taos")
+        "aspen" | "mammoth" | "parkcity" | "taos")
             FROM_DIRS="/boot /etc /home /root /usr/local /var"
             ;;
         "revelstoke")
             FROM_DIRS="/boot /etc /home /root /usr/local \
             /usr/ports/distfiles/local-patches /var"
             ;;
-        "heavenly" | "squawvalley" | "steamboat" |  "sugarbush" | \
-            "tamarack" | "whitewater" | "wolfcreek")
+        "steamboat" | "whitewater" | "wolfcreek")
             FROM_DIRS="/boot /etc /root /usr/home /usr/local /var"
             ;;
         *)
