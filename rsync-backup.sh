@@ -27,10 +27,6 @@ for hostname in "$@"; do
             ;;
     esac
 
-    cap=$(echo ${hostname} | cut -c 1 | tr "[:lower:]" "[:upper:]")
-    rest=$(echo ${hostname} | cut -c 2-)
-    chostname=${cap}${rest}
-
     BACKUP_FROM_DIRS=""
     for dir in ${FROM_DIRS}; do
         BACKUP_FROM_DIRS="${BACKUP_FROM_DIRS} :${dir}"
@@ -38,7 +34,7 @@ for hostname in "$@"; do
     BACKUP_FROM_DIRS=$(echo "${BACKUP_FROM_DIRS}" | sed -e 's/^ //' )
     #echo "${BACKUP_FROM_DIRS}"
 
-    BACKUP_TO_DIR=/mnt/backup/${chostname}
+    BACKUP_TO_DIR=/zbackup/${hostname}
 
     echo "${CMDNAME}: Backing up ${chostname} started at $(date)."
     mkdir -p ${BACKUP_TO_DIR}
