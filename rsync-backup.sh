@@ -13,9 +13,9 @@ fi
 
 for hostname in "$@"; do
     # List of available hosts:
-    # aspen, mammoth, parkcity, revelstoke, steamboat, taos, whitewater, wolfcreek
+    # parkcity, steamboat, whitewater, wolfcreek
     case ${hostname} in
-        "aspen" | "loveland" | "mammoth" | "parkcity" | "revelstoke" | "taos")
+        "parkcity")
             FROM_DIRS="/boot /etc /home /root /usr/local /var"
             ;;
         "steamboat" | "whitewater" | "wolfcreek")
